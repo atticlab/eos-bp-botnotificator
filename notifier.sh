@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 check ()
 {
 NAME=`echo $IP |awk -F ";" '{print $1}' | sed 's/NODE=//g'`
