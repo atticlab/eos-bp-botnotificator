@@ -1,5 +1,5 @@
 # bp-botnotificator
-### This script are momitor the state of node and notified to telegram chanel if node stopped.
+### This script is monitoring the state of node and notify to telegram channel if node stopped.
 ### Setup script
 To setup script change parameters and ips in config.ini.
 ### Start script
