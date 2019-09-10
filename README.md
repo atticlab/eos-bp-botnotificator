@@ -1,6 +1,6 @@
 # bp-botnotificator
 ### This script is monitoring the state of node and notify to telegram channel if node stopped.
-###Prerequisites:
+###Prerequisites:   
 Install curl and jq
 ```
 $sudo apt-get intall curl jq
