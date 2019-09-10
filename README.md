@@ -8,4 +8,4 @@ $sudo apt-get intall curl jq
 ### Setup script
 To setup script change parameters and ips in config.ini.
 ### Start script
-To run backup type ./notifier.sh.
+To run script type ./notifier.sh.
