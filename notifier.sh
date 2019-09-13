@@ -10,7 +10,7 @@ for (( ITERATION=1; ITERATION<=$ITERATIONS; ITERATION++ )); do
         fi
         sleep 10;
         BLOCK=`curl --insecure --connect-timeout 6 -s http://$IPN/v1/chain/get_info |jq -r ".head_block_num"`
-        if [ -z $BLEOS ]; then
+        if [ -z $BLOCK ]; then
                 continue
         else
                 break
@@ -26,7 +26,7 @@ else
         else
                 if [ "$INITIAL" -eq "$BLOCK" ]; then
                         echo "Node is STOP"
-                        curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Node $NAME $IPN stopped at block $BLEOS. Please check http://$IPN/v1/chain/get_info"
+                        curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Node $NAME $IPN stopped at block $BLOCK. Please check http://$IPN/v1/chain/get_info"
                 fi
         fi
 fi
