@@ -18,15 +18,15 @@ for (( ITERATION=1; ITERATION<=$ITERATIONS; ITERATION++ )); do
 done
 if [ -z $INITIAL ]; then
         echo "node is down"
-        curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Seems Node $NAME $IPN don't work. Please check http://$IPN/v1/chain/get_info"
+        curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Node $NAME $IPN doesn't work. Please check http://$IPN/v1/chain/get_info"
 else
         if [ -z $BLOCK ]; then
                 echo "node is down"
-                curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Seems node $NAME $IPN don't work. Please check http://$IPN/v1/chain/get_info"
+                curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Node $NAME $IPN doesn't work. Please check http://$IPN/v1/chain/get_info"
         else
                 if [ "$INITIAL" -eq "$BLOCK" ]; then
                         echo "Node is STOP"
-                        curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Seems Node $NAME $IPN stopped at block $BLEOS. Please check http://$IPN/v1/chain/get_info"
+                        curl -s -X POST https://api.telegram.org/bot$BOTNUMBER/sendMessage -d chat_id=$CHATID -d text="☠️ Node $NAME $IPN stopped at block $BLEOS. Please check http://$IPN/v1/chain/get_info"
                 fi
         fi
 fi
